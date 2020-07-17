@@ -1,0 +1,31 @@
+{% extends 'bookings/base.html' %}
+{% block content %}
+{% load static %}
+<main role="main" class="inner cover">
+ <h2>Bookings</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Game System</th>
+              <th>Skill Level</th>
+              <th>Points Value</th>
+              <th>Opponent</th>
+              <th>Army</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for booking in bookings %}
+            <tr>
+              <td>{{ booking.name }}</td>
+              <td>{{ booking.gametype }}</td>
+              <td>{{ booking.skilllevel }}</td>
+              <td>{{ booking.points }}</td>
+              <td>{{ booking.opponent }}</td>
+              <td>{{ booking.army }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+  </main>
+{% endblock %}

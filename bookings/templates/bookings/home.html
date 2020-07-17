@@ -1,0 +1,52 @@
+{% extends 'bookings/base.html'%}
+{% block content %}
+{% load static %}
+ <main role="main" class="inner cover">
+
+    <h1 class="cover-heading">Welcome</h1>
+    {% if error %}
+    {{ error }}
+    {% endif %}
+    <form class="form-signin" action="{% url 'home' %}" method='POST'>
+    {% csrf_token %}
+    <img class="mb-4" src="{% static 'Wolf_Logo.png' %}" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Book Place/Table</h1>
+    <label for="gametype">Game System:</label><br>
+        <select name="gametype">
+        <option value="40k">40K</option>
+        <option value="40kcrusade">40K Crusade</option>
+        <option value="30k">30K</option>
+        <option value="killteam">KillTeam</option>
+        <option value="titanicus">Titanicus</option>
+        <option value="aos">AOS</option>
+        <option value="warcry">Warcry</option>
+        <option value="underworlds">Underworlds</option>
+        <option value="necromunda">Necromunda</option>
+        <option value="other">Other</option>
+        </select>
+        <br>
+        <br>
+    <label for="skilllevel">Whats Your Skill Level:</label><br>
+        <select name="skilllevel">
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="pro">Pro</option>
+        <option value="absolute cheese master 9000">absolute cheese master 9000</option>
+        </select>
+        <br>
+        <br>
+      <label for="name">Name</label>
+      <input type="text" class="form-control" placeholder="Name" name="name">
+      <br>
+    <label for="points">How many Points Do You Want To Play</label>
+    <input type="number" class="form-control" placeholder="example: 2000" name="points">
+    <br>
+    <label for="opponent">Do you have an opponent in mind already? If so please name them</label>
+    <input type="text" class="form-control" placeholder="If none put none" name="opponent">
+    <br>
+    <label for="army">Which Army/Faction will You Be Bringing?</label>
+    <input type="text" class="form-control" placeholder="eg Space Marines" name="army">
+    <br>
+    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Book">
+  </main>
+{% endblock %}
