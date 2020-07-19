@@ -1,1 +1,1 @@
-web: gunicorn gettingstarted.wsgi --log-file -
+web: bin/start-pgbouncer-stunnel gunicorn gettingstarted.wsgi --log-file -
