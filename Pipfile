@@ -13,6 +13,7 @@ pillow = "*"
 python-dotenv = "*"
 django-heroku = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.6"
