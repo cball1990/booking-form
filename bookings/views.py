@@ -36,5 +36,5 @@ def admin(request):
     return render(request, 'bookings/admin.html')
 
 def seebookings(request):
-    bookings = BookTable.objects.all()
+    bookings = BookTable.objects.all().order_by('-points')
     return render(request, 'bookings/seebookings.html', {'bookings':bookings})

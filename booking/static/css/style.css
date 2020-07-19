@@ -1,10 +1,3 @@
-/*
- * Globals
- */
-
-
-/* Links */
-
 a,
 a:focus,
 a:hover {
@@ -177,4 +170,12 @@ select {
 
 label {
     color: rgb(184, 179, 179);
+}
+
+td {
+    color: orangered;
+}
+
+th {
+    color: rgb(231, 229, 229);
 }
